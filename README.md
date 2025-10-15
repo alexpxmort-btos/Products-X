@@ -1,52 +1,55 @@
+
 # Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.5.
+Este projeto foi gerado usando o [Angular CLI](https://github.com/angular/angular-cli) versão 20.3.5.
 
-## Development server
+## Servidor de desenvolvimento
 
-To start a local development server, run:
+Para iniciar um servidor de desenvolvimento local, execute:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Após o servidor iniciar, abra o navegador e acesse `http://localhost:4200/`.
+A aplicação será recarregada automaticamente sempre que você modificar algum arquivo-fonte.
 
-## Code scaffolding
+## Criação de código (scaffolding)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+O Angular CLI inclui ferramentas poderosas para criação de código. Para gerar um novo componente, execute:
 
 ```bash
-ng generate component component-name
+ng generate component nome-do-componente
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Para uma lista completa de schematics disponíveis (como `components`, `directives` ou `pipes`), execute:
 
 ```bash
 ng generate --help
 ```
 
-## Building
+## Build da aplicação
 
-To build the project run:
+Para compilar o projeto, execute:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Isso irá compilar seu projeto e armazenar os artefatos na pasta `dist/`.
+Por padrão, o build de produção otimiza a aplicação para performance e velocidade.
 
-## Running unit tests
+## Executando testes unitários
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Para executar testes unitários usando o [Karma](https://karma-runner.github.io), execute:
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+## Executando testes de ponta a ponta (e2e)
 
-For end-to-end (e2e) testing, run:
+Para executar testes end-to-end, execute:
 
 ```bash
 ng e2e
