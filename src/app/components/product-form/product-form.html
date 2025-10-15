@@ -1,0 +1,69 @@
+<form
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+  class="flex flex-col gap-4"
+>
+  <div class="flex flex-col">
+    <label class="font-medium mb-1">Nome*</label>
+    <input
+      formControlName="name"
+      placeholder="Nome do produto"
+      class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+    />
+    <small *ngIf="form.get('name')?.invalid && form.get('name')?.touched" class="text-red-600 mt-1">
+      Campo obrigatório
+    </small>
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-medium mb-1">Descrição</label>
+    <input
+      formControlName="description"
+      placeholder="Breve descrição"
+      class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+    />
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-medium mb-1">Preço (R$)*</label>
+<input
+  formControlName="price"
+  [imask]="{
+    mask: numberMask,
+    scale: 2,
+    signed: false,
+    thousandsSeparator: '.',
+    radix: ',',
+    normalizeZeros: true,
+    min: 0
+  }"
+  [unmask]="true"
+  placeholder="0,00"
+  class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none text-left"
+/>
+
+
+
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-medium mb-1">Quantidade*</label>
+    <input
+      formControlName="quantity"
+      type="number"
+      placeholder="0"
+      class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+    />
+  </div>
+
+  <div class="sm:col-span-2 flex justify-end mt-4">
+    <button
+      type="submit"
+      class="px-5 py-2 bg-green-600 text-white rounded-xl hover:bg-green-700 transition disabled:bg-gray-300"
+      [disabled]="form.invalid || loading"
+    >
+      <span *ngIf="!loading">💾 Salvar</span>
+      <span *ngIf="loading">⏳ Salvando...</span>
+    </button>
+  </div>
+</form>
