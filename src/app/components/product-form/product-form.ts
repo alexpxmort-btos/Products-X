@@ -19,24 +19,25 @@ import { IMaskModule } from 'angular-imask';
   form: FormGroup;
   loading = false;
 
-  // Expor Number para o template
   public numberMask = Number;
 
   constructor(private fb: FormBuilder, private service: ProductService) {
     this.form = this.fb.group({
       name: ['', Validators.required],
       description: [''],
-      price: [0, [Validators.required, Validators.min(0.01)]],
+      price: ['', [Validators.required, Validators.min(0.01)]],
       quantity: [0, [Validators.required, Validators.min(1)]],
     });
   }
 
-  ngOnChanges() {
-    if (this.product) this.form.patchValue({
+ngOnChanges() {
+  if (this.product) {
+    this.form.patchValue({
       ...this.product,
-      price:this.product.price.toString()
+      price: this.product.price != null ? String(this.product.price) : ''
     });
   }
+}
 onSubmit() {
   if (this.form.invalid) return;
   this.loading = true;

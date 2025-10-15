@@ -56,9 +56,13 @@ export class ProductListComponent {
 
     deleteProductConfirmed() {
     if (this.productToDelete) {
-      this.products = this.products.filter(p => p.id !== this.productToDelete!.id);
-      this.showDeleteModal = false;
-      this.productToDelete = undefined;
+      if(this.productToDelete?.id){
+         this.service.deleteProduct(this.productToDelete.id).subscribe(()=>{
+           this.products = this.products.filter(p => p.id !== this.productToDelete?.id);
+          this.showDeleteModal = false;
+          this.productToDelete = undefined;
+         })
+      }
     }
   }
 
