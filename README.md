@@ -51,7 +51,7 @@ For end-to-end (e2e) testing, run:
 ```bash
 ng e2e
 ```
-# BACK END c#
+# BACK END C#
 [Link](https://github.com/alexpxmort-btos/Api-C-)
 
 
